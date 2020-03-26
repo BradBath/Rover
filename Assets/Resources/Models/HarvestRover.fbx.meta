@@ -21,7 +21,42 @@ ModelImporter:
   - first:
       74: 4743084820616853705
     second: Armature|CameraAction
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 0416aca11be2afa4b974bdbc1437615e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: 063ec96832b08dc43a2b4ff7c0990086, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: a65c8b7c9cf21264588e508a402b523c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: grey
+    second: {fileID: 2100000, guid: 027e22fc9361cdd4cbd1c01181d52ecc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rubber
+    second: {fileID: 2100000, guid: f76e58882a1988f448a7b5fd722ee980, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rubber.001
+    second: {fileID: 2100000, guid: 38fb3a4156629e04bbb470d6304f60d0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tray
+    second: {fileID: 2100000, guid: 2e0da6fceb9996b4db086ba0eb9fa34e, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -58,7 +93,7 @@ ModelImporter:
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
     importVisibility: 1
-    importBlendShapes: 1
+    importBlendShapes: 0
     importCameras: 1
     importLights: 1
     swapUVChannels: 0

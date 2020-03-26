@@ -7,15 +7,26 @@ public class Rover : MonoBehaviour
 
     [SerializeField] HingeJoint frontLeftWheel;
     [SerializeField] HingeJoint frontRightWheel;
-    [SerializeField] Transform frontLeftWheelBracket;
-    [SerializeField] Transform frontRightWheelBracket;
+    [SerializeField] HingeJoint frontLeftWheelBracket;
+    [SerializeField] HingeJoint frontRightWheelBracket;
 
 
     public void Turn(float deg)
     {
         print("Turning " + deg.ToString() + " degrees");
-        frontLeftWheelBracket.rotation = Quaternion.Euler(0, deg, 0);
-        frontRightWheelBracket.rotation = Quaternion.Euler(0, deg, 0);
+        JointLimits newLimits = frontLeftWheelBracket.limits;
+        newLimits.min = 0;
+        newLimits.bounciness = 0;
+        newLimits.bounceMinVelocity = 0;
+        newLimits.max = deg;
+        newLimits.min = -deg;
+        frontLeftWheelBracket.limits = newLimits;
+        frontRightWheelBracket.limits = newLimits;
+    }
+
+    IEnumerator TurnWheels()
+    {
+        yield return null;
     }
 
 
@@ -28,17 +39,14 @@ public class Rover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetAxis("Horizontal") > 0)
+        if (Input.GetButtonDown("Horizontal"))
         {
-            Turn(75);
+            Turn(25);
         }
-        else if (Input.GetAxis("Horizontal") < 0)
-        {
-            Turn(-75);
-        }
-        else if (Input.GetAxis("Horizontal") == 0)
+        if (Input.GetButtonUp("Horizontal"))
         {
             Turn(0);
         }
+
     }
 }
